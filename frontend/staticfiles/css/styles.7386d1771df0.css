@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe3ee, #ffc2d8);
+    min-height: 100vh;
+    color: #7a1f42;
+    padding: 30px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.header-icon {
+    width: 48px;
+    height: 48px;
+    background: #ffffff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(214, 51, 108, 0.15);
+}
+
+.header h1 {
+    color: #ad1457;
+    font-size: 24px;
+}
+
+.header p {
+    color: #b0678a;
+    font-size: 14px;
+}
+
+/* Toggle pills */
+.toggle-group {
+    display: inline-flex;
+    background: #fff0f6;
+    border-radius: 999px;
+    padding: 4px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(214, 51, 108, 0.1);
+}
+
+.toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    color: #b0678a;
+    transition: all 0.2s;
+}
+
+.toggle-btn.active {
+    background: #d6336c;
+    color: white;
+}
+
+/* Two-column layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 700px) {
+    .grid { grid-template-columns: 1fr; }
+}
+
+.panel {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(214, 51, 108, 0.12);
+}
+
+.panel h2 {
+    font-size: 16px;
+    color: #ad1457;
+    margin-bottom: 4px;
+}
+
+.panel .subtitle {
+    font-size: 13px;
+    color: #b0678a;
+    margin-bottom: 16px;
+}
+
+/* Drop zone / camera area */
+.drop-zone {
+    border: 2px dashed #ffb3cf;
+    border-radius: 14px;
+    background: #fff8fb;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.drop-zone video, .drop-zone img {
+    width: 100%;
+    max-height: 260px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.drop-zone .hint {
+    font-weight: 600;
+    color: #d6336c;
+    margin-bottom: 4px;
+}
+
+.drop-zone .filetypes {
+    font-size: 12px;
+    color: #d98bab;
+    background: #ffe3ee;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-top: 8px;
+}
+
+#fileInput { display: none; }
+
+/* Action button */
+.action-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 16px;
+    background: #d6336c;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.action-btn:hover { background: #b02a5b; }
+.action-btn:disabled { background: #f3a9c4; cursor: not-allowed; }
+
+/* Result panel */
+.result-box {
+    border: 1px dashed #ffc2d8;
+    border-radius: 12px;
+    background: #fff8fb;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #d98bab;
+    font-size: 14px;
+    padding: 16px;
+}
+
+.result-box.compliant {
+    background: #ffd6e8;
+    color: #ad1457;
+    border-color: #ff8fb1;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.result-box.non-compliant {
+    background: #ffc1d9;
+    color: #880e4f;
+    border-color: #d6336c;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 12px;
+    color: #c47a9a;
+}
+
+/* --- Login (pantalla separada, se queda centrada) --- */
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(214, 51, 108, 0.2);
+}
+
+.login-card h1 { color: #ad1457; margin-bottom: 24px; font-size: 24px; }
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ffb3cf;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+#error { color: #b02a5b; margin-top: 12px; font-size: 14px; font-weight: 600; }

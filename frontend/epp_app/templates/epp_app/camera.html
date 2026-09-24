@@ -22,7 +22,6 @@
         </div>
 
         <div class="grid">
-            <!-- Panel izquierdo: captura -->
             <div class="panel">
                 <h2 id="panelTitle">Sube tu imagen</h2>
                 <p class="subtitle" id="panelSubtitle">Selecciona una fotografía para analizarla</p>
@@ -41,7 +40,6 @@
                 <button class="action-btn" id="actionBtn">Procesar imagen</button>
             </div>
 
-            <!-- Panel derecho: resultado -->
             <div class="panel">
                 <h2>Resultado del análisis</h2>
                 <p class="subtitle">Aquí verás si cumple con el EPP requerido</p>
@@ -54,6 +52,7 @@
         <div class="footer">Verificador EPP · Python, FastAPI y YOLOv8 · Proyecto académico 2026</div>
     </div>
 
+    <script>window.API_BASE_URL = "{{ api_base_url }}";</script>
     <script src="{% static 'js/camera.js' %}"></script>
 </body>
 </html>
